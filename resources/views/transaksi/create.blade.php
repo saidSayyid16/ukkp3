@@ -7,7 +7,7 @@
 @section('content')
 <div class="row">
   <!-- left column -->
-  <div class="col-md-6">
+  <div class="col-md-6">  
     <!-- general form elements -->
     <div class="card card-danger">
       <div class="card-header">

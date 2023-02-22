@@ -22,9 +22,9 @@ use App\Http\Controllers\TransaksiController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('register', [RegisterController::class, 'view'])->name('register')->middleware('guest');
 Route::post('register', [RegisterController::class, 'store'])->name('register.store')->middleware('guest');
@@ -39,7 +39,9 @@ Route::get('/dashboard/owner', [DashboardController::class, 'owner'])->name('das
 
 Route::view('error/403', 'error.403')->name('error.403');
 
-Route::resource('outlet', OutletController::class);
-Route::resource('paket', PaketController::class);
-Route::resource('member', MemberController::class);
-Route::resource('transaksi', TransaksiController::class);
+Route::resource('outlet', OutletController::class)->middleware('auth', 'role:outlet');
+Route::resource('paket', PaketController::class)->middleware('auth', 'role:paket');
+Route::resource('member', MemberController::class)->middleware('auth', 'role:member');
+Route::resource('transaksi', TransaksiController::class)->middleware('auth', 'role:transaksi');
+
+Route::view('/', 'home');
