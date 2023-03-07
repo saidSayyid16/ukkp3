@@ -5,7 +5,7 @@
 @endsection
 
 @section ('content')
-<div class="card card-danger">
+<div class="card card-info">
               <div class="card-header">
                 <h3 class="card-title">Data Informasi</h3>
               </div>
@@ -33,7 +33,7 @@
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                <a class="btn btn-danger" href="/outlet">Back</a>
+                <a class="btn btn-info" href="/outlet">Back</a>
                 </div>
               </form>
             </div>

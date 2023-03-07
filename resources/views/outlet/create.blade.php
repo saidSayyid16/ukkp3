@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-<div class="card card-danger">
+<div class="card card-info">
               <div class="card-header">
                 <h3 class="card-title">Menambahkan Data</h3>
               </div>
@@ -28,7 +28,7 @@
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-danger">Submit</button>
+                  <button type="submit" class="btn btn-info">Submit</button>
                 </div>
               </form>
             </div>

@@ -6,7 +6,7 @@
 
 @section('content')
 <div class="col-md-12">
-  <div class="card card-danger">
+  <div class="card card-blue">
      <div class="card-header">
        <h3 class="card-title">Masukan Data Paket</h3>
      </div>
@@ -20,7 +20,7 @@
             <select class="form-control" aria-label="Default select example" name="outlet_id" >
             <option selected>Open this select menu</option>
             @foreach ($outlet as $item)
-            <option value="{{ $item->id}}">{{ $item->nama }}</option>
+            <option value="{{ $item->id}}">{{ $item->nama. ' | '. $item->alamat}}</option>
             @endforeach
             </select>
            </div>
@@ -45,7 +45,7 @@
            </div>
        <!-- /.card-body -->
        <div class="card-footer">
-         <button type="submit" class="btn btn-danger">Submit</button> 
+         <button type="submit" class="btn btn-info">Submit</button> 
        </div>
      </form>
  </div>

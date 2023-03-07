@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Detail_transaksi;
+use App\Models\Transaksi;
 use Illuminate\Http\Request;
 
 class DetailTransaksiController extends Controller
@@ -33,9 +34,25 @@ class DetailTransaksiController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, transaksi $transaksi, Detail_transaksi $detail_transaksi)
     {
         //
+        $request->validate([
+            'id_paket'  => 'required',
+            'qty'       => 'required'
+        ],
+        [
+            'id_paket.required' => 'Pilih Paket',
+            'qty.required'      => 'Isi Qty'
+        ]);
+
+        $detail_transaksi = new Detail_transaksi;
+        $detail_transaksi->transaksi_id  = $transaksi;
+        $detail_transaksi->paket_id      = $request->id_paket;
+        $detail_transaksi->qty           = $request->qty;
+        $detail_transaksi->save();
+
+        return redirect()->route('transaksi.proses', $transaksi);
     }
 
     /**

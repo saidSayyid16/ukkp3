@@ -19,7 +19,7 @@
     </div>
     <!-- /.card-header -->
     <div class="card-body">
-    <a href="outlet/create" class="btn btn-danger">
+    <a href="outlet/create" class="btn btn-info">
           <i class="fas fa-plus"></i>
            Tambah
         </a>

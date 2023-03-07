@@ -1,4 +1,4 @@
-<aside class="main-sidebar sidebar-dark-primary elevation-4">
+<aside class="main-sidebar sidebar-primary elevation-4">
     <!-- Brand Logo -->
     <a href="{{ asset('adminlte/index3.html')}}" class="brand-link">
       <img src="{{asset('adminlte/dist/img/laundry.jpg')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
@@ -42,42 +42,19 @@
               </p>
             </a>
           </li>
-          <li class="nav-header">LIST BARANG OUTLET</li>
           <li class="nav-item">
-            <a href="/outlet" class="nav-link">
-            <i class="nav-icon fas fa-tag"></i>
+            <a href="/dashboard/kasir" class="nav-link">
+              <i class="nav-icon fas fa-user-alt"></i>
               <p>
-                List Outlet
+                Kasir
               </p>
             </a>
           </li>
-          <li class="nav-header">LIST BARANG PAKET</li>
           <li class="nav-item">
-          <a href="/paket" class="nav-link">
-          <i class="nav-icon fas fa-tag"></i>
+            <a href="/dashboard/owner" class="nav-link">
+              <i class="nav-icon fas fa-user-alt"></i>
               <p>
-                List Paket
-              </p>
-            </a>
-          </li>
-          <li class="nav-header">LIST BARANG MEMBER</li>
-          <li class="nav-item">
-          <a href="/member" class="nav-link">
-          <i class="nav-icon fas fa-tag"></i>
-              <p>
-                List Member
-                </p>
-                </a>
-               </li>
-               <li class="nav-header">LIST DATA TRANSAKSI</li>
-              <li class="nav-item">
-                <a href="/transaksi" class="nav-link">
-                  <i class="nav-icon fas fa-dollar-sign"></i>
-                  <p>
-                    Transaksi
-                  </p>
-                </a>
-               </li>
+                Owner
               </p>
             </a>
           </li>
