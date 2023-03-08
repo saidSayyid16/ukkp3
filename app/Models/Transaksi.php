@@ -11,7 +11,7 @@ class Transaksi extends Model
     protected $table = "transaksis";
     protected $fillable = [
         'id',
-        'outlet_id',
+        'outlets_id',
         'kode_invoice',
         'member_id',
         'tgl',
@@ -24,4 +24,20 @@ class Transaksi extends Model
         'dibayar',
         'user_id'
     ];
+    public function outlet()
+    {
+        return $this->hasOne('App\Models\Outlet', 'id', 'outlets_id');
+    }
+    public function member()
+    {
+        return $this->hasOne('App\Models\Member', 'id', 'member_id');
+    }
+    public function user()
+    {
+        return $this->hasOne('App\Models\User', 'id', 'user_id');
+    }
+    public function paket()
+    {
+        return $this->hasOne('App\Models\Paket', 'id', 'paket_id');
+    }
 }

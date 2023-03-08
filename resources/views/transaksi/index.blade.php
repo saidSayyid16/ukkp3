@@ -1,10 +1,10 @@
 @extends('template.master')
 
 @section('judul')
- <h1> Ini Halaman Create Transaksi </h1>
+    <h1>Ini Halaman Index Transaksi</h1>
 @endsection
 
-@section('content')    
+@section('content')
 <div class="card">
     <div class="card-header">
     <div class="card-tools">
@@ -19,47 +19,44 @@
     </div>
     <!-- /.card-header -->
     <div class="card-body">
-        <a href="transaksi/create" class="btn btn-secondary">
-          <i class="fas fa-plus"></i>
+    <a href="transaksi/create" class="btn btn-primary">
+    <i class="fas fa-plus-square"></i>
            Tambah
         </a>
+        <br>
+        </tr>
+        <br>
       <table id="example2" class="table table-bordered table-hover">
         <thead>
-    <tr>
-        <td class="td1">No</td>
-        <td class="td5">Outlet Id</td>
-        <td class="td3">Kode Invoice</td>
-        <td class="td2">Tanggal</td>
-        <td class="td4">Status</td>
-        <td class="td4">Dibayar</td>
-        <td class="td4">Action</td>
-    </tr>
+        <tr>
+          <th>No</th>
+          <th>Nama Outlet</th>
+          <th>Nama Member</th>
+          <th>Status</th>
+          <th>Dibayar</th>
+          <th>Action</th>
+        </tr>
         </thead>
         <tbody>
-            <tr>
-          @forelse($transaksi as $transaksi)
-          <th class="th1">{{ $loop->iteration}}</th>
-            <td class="th2">{{ $transaksi->outlet_id }}</td>
-            <td class="th3">{{ $transaksi->kode_invoice }}</td>
-            <td class="th2">{{ $transaksi->tgl}}</td>
-            <td class="th2">{{ $transaksi->status}}</td>
-            <td class="th2">{{ $transaksi->dibayar}}</td>
-            <td class="th4">
+          @forelse($transaksis as $transaksi)
+         <tr>
+          <td>{{ $loop->iteration }}</td>
+          <td>{{ $transaksi->outlet->nama }}</td>
+          <td>{{ $transaksi->member->nama }}</td>
+          <td>{{ $transaksi->status }}</td>
+          <td>{{ $transaksi->dibayar }}</td>
+          <td>
           <form action="{{ route ('transaksi.destroy', [$transaksi->id])}}" method="POST">
               <a class="btn btn-info mr-3" href="transaksi/{{$transaksi->id}}">
-                <i class="fas fa-info-circle"></i>
-                Detail
-              </a>
+              <i class=""></i> Detail</a>
               <a class="btn btn-warning mr-3" href="transaksi/{{$transaksi->id}}/edit">
-              <i class="far fa-edit"></i> 
-              Edit
-              </a>
+              <i class=""></i> Edit</a>
+              <form action="/transaksi/{{$transaksi->id}}" method="POST">
             @csrf
             @method('DELETE')
-           <button type="submit" class="btn btn-danger" value="Delete">
-           <i class="fas fa-solid fa-trash"></i>
+           <button type="submit" class="btn btn-danger" value="Delete"> 
             Delete
-           </button>
+          </button>
           </form>
             </td>
          </tr>
@@ -81,7 +78,7 @@
 
 <script>
     $(function () {
-     $('#data-transaksi').DataTransaksi();
+     $('#data-tarnsaksi').DataTransaksi();
         
       $('#example2').DataTransaksi({
         "paging": true,

@@ -16,4 +16,5 @@ class Member extends Model
         'jenis_kelamin',
         'tlp'
     ];
+    
 }

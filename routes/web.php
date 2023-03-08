@@ -9,6 +9,8 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\DetailTransaksiController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\InvoiceController;
 
 
 
@@ -44,7 +46,9 @@ Route::view('error/403', 'error.403')->name('error.403');
 Route::resource('outlet', OutletController::class)->middleware('auth', 'role:outlet');
 Route::resource('paket', PaketController::class)->middleware('auth', 'role:paket');
 Route::resource('member', MemberController::class)->middleware('auth', 'role:member');
-Route::resource('transaksi', TransaksiController::class)->middleware('auth', 'role:transaksi');
+Route::resource('user', UserController::class)->middleware('auth','role:admin');
+Route::resource('transaksi', TransaksiController::class)->middleware('auth','role:transaksi');
+Route::resource('invoice', InvoiceController::class)->middleware('auth','role:invoice');
 
 Route::middleware(['auth', 'role:kasir,admin'])->group(function () {
     Route::post('transaksi/baru', [TransaksiController::class, 'create'])->name('transaksi.baru');

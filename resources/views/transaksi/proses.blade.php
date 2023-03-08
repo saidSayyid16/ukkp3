@@ -1,5 +1,9 @@
 @extends('template.master')
 
+@section('judul')
+<h1>Ini Halaman Create Transaksi</h1>
+@endsection
+
 @section('content')
 <div class="row">
 <div class="col-md-12">
@@ -49,13 +53,13 @@
       </div>
       <!-- /.card-header -->
       <!-- form start -->
-        <div class="card-body">
+      <div class="card-body">
           <div class="form-group">
             <label for="exampleInputEmail1">Pilih Data Member</label>
-            <select name="id_member" id="id_member" class="form-control">
+            <select name="member_id" id="member_id" class="form-control">
               <option selected disabled>--Pilih Data Member--</option>
               @forelse ($members as $member)
-                <option value="{{ $member->id }}">{{ $member->nama }}</option>                  
+                <option value="{{ $member->nama }}">{{ $member->nama }}</option>                  
               @empty
                 <option selected disabled>Tidak Ada Paket Tersedia</option>
               @endforelse
@@ -70,5 +74,4 @@
   <!-- right column -->
   <!--/.col (right) -->
 </div>
-
 @endsection

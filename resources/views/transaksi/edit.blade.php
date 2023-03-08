@@ -1,44 +1,87 @@
-@extends('layouts.app')
+@extends('template.master')
+
+@section('judul')
+<h1>Ini Halaman Edit Transaksi</h1>
+@endsection
 
 @section('content')
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">{{ __('Edit Transaksi') }}</div>
-
-                    <div class="card-body">
-                        <form method="POST" action="{{ route('transaksi.update', $transaksi->id) }}">
-                            @csrf
-                            @method('PUT')
-
-                            <div class="form-group row">
-                                <label for="nama" class="col-md-4 col-form-label text-md-right">{{ __('Nama') }}</label>
-
-                                <div class="col-md-6">
-                                    <input id="nama" type="text" class="form-control @error('nama') is-invalid @enderror" name="nama" value="{{ $transaksi->nama }}" required autocomplete="nama" autofocus>
-
-                                    @error('nama')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
-
-                            <!-- Tambahkan field lainnya sesuai kebutuhan -->
-
-                            <div class="form-group row mb-0">
-                                <div class="col-md-6 offset-md-4">
-                                    <button type="submit" class="btn btn-info">
-                                        {{ __('Update') }}
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
+<div class="col-md-12">
+  <div class="card card-primary">
+     <div class="card-header">
+       <h3 class="card-title">Masukan Data Barang</h3>
+     </div>
+     <!-- /.card-header -->
+     <!-- form start -->
+     <form action="/transaksi" method="POST">
+         @csrf
+       <div class="card-body">
+        <div class="form-group">
+          <label for="outlet_id">Outlet Id</label>
+          <input type="text" name="outlet_id" class="form-control" id="inputNIS" 
+          placeholder="Enter Nomer Induk Siswa"value="{{ $transaksi->outlets_id }}" > 
         </div>
-    </div>
+             <div class="form-group">
+               <label for="Kode_Invoice">Kode Invoice</label>
+               <input type="text" name="kode_invoice" class="form-control" id="Kode_Invoice" 
+               placeholder="Kode Invoide" value="{{$transaksi->kode_invoice}}">
+             </div>
+             <div class="form-group">
+              <label for="member_id">Member Id</label>
+              <input type="text" name="member_id" class="form-control" id="inputNIS" 
+              placeholder="Enter Nomer Induk Siswa"value="{{ $transaksi->member_id }}" > 
+            </div>
+              <div class="form-group">
+                <label for="harga_awal">Tanggal</label>
+                <input type="date" name="tgl" class="form-control" id="Tanggal"
+                 placeholder="Tanggal" value="{{$transaksi->tgl}}">
+              </div>
+              <div class="form-group">
+                <label for="harga_awal">Tanggal Bayar</label>
+                <input type="date" name="tgl_bayar" class="form-control" id="Tgl_Bayar" 
+                placeholder="Tanggal Bayar" value="{{$transaksi->tgl_bayar}}">
+              </div>
+              <div class="form-group">
+                <label for="harga_awal">Batas Waktu</label>
+                <input type="date" name="batas_waktu" class="form-control" id="Batas_Waktu" 
+                placeholder="Tanggal Bayar" value="{{$transaksi->batas_waktu}}">
+              </div>
+              <div class="form-group">
+                <label for="harga_awal">Biaya Tambahan</label>
+                <input type="number" name="biaya_tambahan" class="form-control" id="Biaya_Tambahan" 
+                placeholder="Biaya Tambahan" value="{{$transaksi->biaya_tambahan}}">
+              </div>
+              <div class="form-group">
+                <label for="harga_awal">Diskon</label>
+                <input type="number" name="diskon" class="form-control" id="Diskon" 
+                placeholder="Diskon" value="{{$transaksi->diskon}}">
+              </div>
+              <div class="form-group">
+                <label for="harga_awal">Pajak</label>
+                <input type="number" name="pajak" class="form-control" id="Pajak"
+                 placeholder="Pajak" value="{{$transaksi->pajak}}">
+              </div>
+            </select>
+            <div class="form-group">
+              <label for="statsu">Dibayar</label>
+              <input type="text" name="status" class="form-control" id="inputNIS" 
+              placeholder="Enter Nomer Induk Siswa"value="{{ $transaksi->status }}" > 
+            </div>
+            <div class="form-group">
+              <label for="status">Dibayar</label>
+              <input type="text" name="dibayar" class="form-control" id="inputNIS" 
+              placeholder="Enter Nomer Induk Siswa"value="{{ $transaksi->dibayar }}" > 
+            </div>
+            <div class="form-group">
+              <label for="user_id">User Id</label>
+              <input type="text" name="user_id" class="form-control" id="inputNIS" 
+              placeholder="Enter Nomer Induk Siswa"value="{{ $transaksi->user_id }}" > 
+            </div>
+       </div>
+       <!-- /.card-body -->
+       <div class="card-footer">
+         <button type="submit" class="btn btn-primary">Submit</button> 
+       </div>
+     </form>
+   </div>
+ </div>
 @endsection

@@ -1,22 +1,20 @@
 @extends('template.master')
 
 @section('content')
-<h1>Selamat Datang Admin</h1>
-<section class="content">
-      <div class="container-fluid">
-        <!-- Small boxes (Stat box) -->
-
-        <div class="bg-blue p-2">
-        <a>Selamat Datang Admin,Selamat Dan Sukses</a>
+<div class="row">
+  <div class="col-lg-12">
+      <div class="box">
+          <div class="box-body text-center">
+              <h1>Selamat Datang</h1>
+              <h2>Anda login sebagai ADMIN</h2>
+              <br><br>
         </div>
-        <br>
-        <div class="bg-blue p-2 mb-3">
-          <a>Ringkasan Sistem</a>
+        
         </div>
         <div class="row">
           <div class="col-lg-3 col-6">
             <!-- small box -->
-            <div class="small-box bg-info">
+            <div class="small-box bg-danger">
               <div class="inner">
                 <h3>Outlet</h3>
 
@@ -31,7 +29,7 @@
           <!-- ./col -->
           <div class="col-lg-3 col-6">
             <!-- small box -->
-            <div class="small-box bg-success">
+            <div class="small-box bg-warning">
               <div class="inner">
                 <h3>Paket</h3>
 
@@ -46,7 +44,7 @@
           <!-- ./col -->
           <div class="col-lg-3 col-6">
             <!-- small box -->
-            <div class="small-box bg-warning">
+            <div class="small-box bg-success">
               <div class="inner">
                 <h3>Member</h3>
 
@@ -61,7 +59,22 @@
           <!-- ./col -->
           <div class="col-lg-3 col-6">
             <!-- small box -->
-            <div class="small-box bg-danger">
+            <div class="small-box bg-primary">
+              <div class="inner">
+                <h3>Pengguna</h3>
+
+                <p>Tambah Data</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-pie-graph"></i>
+              </div>
+              <a href="/user" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+            </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-orange">
               <div class="inner">
                 <h3>Transaksi</h3>
 

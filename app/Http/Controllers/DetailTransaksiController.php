@@ -16,7 +16,9 @@ class DetailTransaksiController extends Controller
     public function index()
     {
         //
+       
     }
+    
 
     /**
      * Show the form for creating a new resource.
@@ -34,7 +36,7 @@ class DetailTransaksiController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, transaksi $transaksi, Detail_transaksi $detail_transaksi)
+    public function store(Request $request, $transaksi)
     {
         //
         $request->validate([
