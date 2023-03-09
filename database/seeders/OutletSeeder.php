@@ -16,9 +16,9 @@ class OutletSeeder extends Seeder
     {
         //
             Outlet::create([
-                'nama'  => 'karawang',
+                'nama'  => 'laundry sukses',
                 'alamat'    => 'karawang',
-                'tlp'       => '081'
+                'tlp'       => '082123610445'
             ]);
     }
 }

@@ -42,7 +42,7 @@ class TransaksiController extends Controller
         $transaksi = new Transaksi;
         $transaksi->outlets_id       = Auth::user()->outlets_id;
         $transaksi->kode_invoice    = '';
-        $transaksi->member_id       =  '2';
+        $transaksi->member_id       = '3';
         $transaksi->tgl             = Carbon::now()->format('Y-m-d');
         $transaksi->batas_waktu     = Carbon::now()->format('Y-m-d');
         $transaksi->tgl_bayar       = Carbon::now()->format('Y-m-d');
